@@ -1,4 +1,4 @@
-.chat {
+.wondowChat{
 	display: flex;
 	flex-direction: column;
 	position: fixed;
@@ -9,8 +9,12 @@
 	background-color: var(--main-dark-backgroundNormal);
 }
 
-.chat_header {
+.wondowChat_header {
 	display: flex;
 	justify-content: space-between;
 	margin: .3rem;
+}
+
+.wondowChat_header_icon {
+	cursor: pointer;
 }

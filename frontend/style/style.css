@@ -26,8 +26,10 @@ body {
 	user-select: none;
 	font-family: "Ubuntu-medium";
 }
-
+a {
+	text-decoration: none;
+	color: var(--main-dark-foregroundNormal);
+}
 li {
 	list-style-type: none;
-	cursor: pointer;
 }

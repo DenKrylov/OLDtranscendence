@@ -7,12 +7,14 @@ header {
 }
 
 .header_h1 {
+	flex-shrink: 0;
 	margin: 0 0 0 1rem;
 	cursor: pointer;
 }
 
 .header_nav {
 	display: flex;
+	flex-shrink: 0;
 	margin: 0 1rem 0 0;
 }
 
@@ -20,16 +22,36 @@ header {
 	margin: 0 1rem 0 1rem;
 	color: var(--main-dark-foregroundNormal);
 	padding: .5rem;
+	cursor: pointer;
+}
+
+.header_li_denid {
+	margin: 0 1rem 0 1rem;
+	color: var(--main-dark-foregroundNeutral);
+	padding: .5rem;
+	cursor: pointer;
+}
+
+.header_li:active {
+	color: var(--main-dark-foregroundPositive);
+}
+
+.header_li_denid:active {
+	color: var(--main-dark-foregroundNegative);
+}
+
+.header_nikename {
+	color: var(--main-dark-decorationFocus);
 }
 
 .header_login__in {
-	color: var(--main-dark-foregroundPositive)
+	color: var(--main-dark-foregroundPositive);
 }
 
-.header_login__up {
+/* .header_login__up {
 	border: 1px solid var(--main-dark-foregroundNormal);
 	border-radius: .3rem;
-}
+} */
 
 .header_login__up:hover {
 	transition: .3s;
@@ -37,7 +59,9 @@ header {
 	border: 1px solid var(--main-dark-foregroundLink);
 }
 
-li:hover {
-	transition: .3s;
-	color: var(--main-dark-foregroundLink);
+.header_mid { 
+	display: flex;
+	flex: 1 0 auto;
+	justify-content: center;
 }
+/* Доделать середину хедара */

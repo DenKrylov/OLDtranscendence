@@ -1,0 +1,63 @@
+.sign {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, .7);
+}
+
+.sign_window {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30rem;
+	align-self: center;
+	background: var(--main-dark-backgroundNormal);
+	border-radius: .3rem;
+}
+
+.sign_logo {
+	font-size: 3rem;
+	color: var(--main-dark-decorationFocus);
+	margin: 2rem 0;
+}
+
+.sign_form {
+	display: flex;
+	flex-direction: column;
+}
+
+.sign_input {
+	display: flex;
+	height: 3rem;
+	margin: .5rem;
+	padding: 0 0 0 .5rem;
+	box-sizing: border-box;
+	background: var(--main-dark-backgroundNormal);
+	color: var(--main-dark-foregroundNormal);
+	border: 1px solid var(--main-dark-backgroundAlternate);
+	border-radius: .3rem;
+	font-size: 1.5rem;
+}
+
+.sign_send {
+	display: flex;
+	height: 3rem;
+	width: 7rem;
+	margin: .5rem 1rem 2rem 0;
+	box-sizing: border-box;
+	background: var(--main-dark-backgroundNormal);
+	border: 1px solid var(--main-dark-backgroundAlternate);
+	border-radius: .3rem;
+	cursor: pointer;
+	color: var(--main-dark-decorationFocus);
+}
+
+.sign_send:active {
+	transition: .1s;
+	background: var(--main-dark-decorationFocus);
+	color: var(--main-dark-foregroundNormal);
+}
