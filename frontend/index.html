@@ -13,42 +13,83 @@
 	<link rel="stylesheet" href="style/main.css">
 	<link rel="stylesheet" href="style/nav.css">
 	<link rel="stylesheet" href="style/sidebar.css">
+	<link rel="stylesheet" href="style/sign.css">
 	<link rel="stylesheet" href="style/style.css">
 	<title>Transcendence</title>
+	<script src="script/vue.js"></script>
 </head>
 <body>
-	<header>
-		<h1 class="header_h1"><a href="/frontend/html/home.html">Transcendence</a></h1>
-		<ul class="header_nav">
-			<li class="header_li_denid"><a href="/frontend/index.html">Home</a></li>
-			<li class="header_li_denid"><a href="/frontend/index.html">Chat</a></li>
-			<li class="header_li_denid"><a href="/frontend/index.html">Game</a></li>
-			<li class="header_li header_login__in"><a href="/frontend/html/sign.html">Sign in</a></li>
-		</ul>
-	</header>
-	<sidebar class="wondowChat">
-		<div class="wondowChat_header">
-			<p>TransceTelegram</p>
-			<div>
-				<img class="wondowChat_header_icon" src="icon/fullscreen_exit_white_24dp.svg" alt="fullscreen exit">
-				<img class="wondowChat_header_icon" src="icon/fullscreen_white_24dp.svg" alt="fullscreen">
-				<img class="wondowChat_header_icon" src="icon/close_white_24dp.svg" alt="close">
+	<div class="app">
+		<header>
+			<h1 class="header_h1" v-on:click="logout()">Transcendence</h1>
+			<ul class="header_nav">
+				<li class="header_li header_li_active" v-if="login" v-on:click="showHome()">Home</li>
+				<li class="header_li" v-if="login" v-on:click="showChat()">Chat</li>
+				<li class="header_li" v-if="login" v-on:click="showGame()">Game</li>
+				<li class="header_li header_nikename" v-if="login" v-on:click="showInfo()"> Monie </li>
+				<li class="header_li header_li_active" v-else v-on:click="signPage = true">Sign in</li>
+			</ul>
+		</header>
+		<main class="main" v-show="mainPage">
+			<div class="main_logo">
+				<img class="main_logo_img" src="images/logo.png" alt="macbook">
+			</div>
+			<h3 class="main_header" >Soon you will know that you’ve already known thingsthat you thought you didn’t know</h3>
+			<p class="main_text">Summary:  This is not C or C++ basic functions! To do something that you’ve never done</p>
+			<p class="main_text">before without a piscine. Remind yourself at the beginning of your journey</p>
+			<p class="main_text">in computer science. Now, look where you are standing. Time to shine</p>
+		</main>
+		<div class="chat" v-show="chatPage">
+			<ul class="chat_nav">
+				<li li class="chat_users" v-for="chat in chats">
+					<img class="chat_data_avatarka" src="../images/avatarka.png" alt="avatarka">
+					<div class="chat_data">
+						<p class="chat_data__niknema">{{ chat.name }}</p>
+						<p class="chat_data__massage">{{ chat.message }}</p>
+					</div>
+				</li>
+			</ul>
+			<div class="chat_main">
+				<ul class="chat_dialog">
+					<li class="dialog dialog_ohter" v-for="message in dialog">
+						<img class="dialog_avatarka" src="../images/avatarka.png" alt="avatarka">
+						<div class="dialog_data dialog_data_other">
+							<h4 class="dialog_name">{{ message.user }}</h6>
+							<p class="dialog_text">{{ message.text }}</p>
+						</div>
+					</li>
+				</ul>
+				<div class="chat_push">
+					<form  id="chat_input">
+						<input class="chat_input" type="text" name="age" autofocus>
+					</form>
+					<input class="chat_send" type="submit" form="test" value="SEND">
+				</div>
 			</div>
 		</div>
-	</sidebar>
-	<main>
-		<div class="main_logo">
-			<img class="main_logo_img" src="images/logo.png" alt="macbook">
+		<div class="game" v-show="gamePage">
+			<div class="player_one"></div>
+			<div class="field field_one"></div>
+			<div class="field field_two"></div>
+			<div class="player_two"></div>
+			<div class="ball"></div>
 		</div>
-		<h3 class="main_header" >Soon you will know that you’ve already known thingsthat you thought you didn’t know</h3>
-		<p class="main_text">Summary:  This is not C or C++ basic functions! To do something that you’ve never done</p>
-		<p class="main_text">before without a piscine. Remind yourself at the beginning of your journey</p>
-		<p class="main_text">in computer science. Now, look where you are standing. Time to shine</p>
-	</main>
-	<footer>
-		<p class="footer_info">Best player</p>
-		<p>2021 &copy; Transcendence</p>
-		<img class="footer_switchThem" src="icon/brightness_6_white_24dp.svg" alt="Switch them">
-	</footer>
+		<footer>
+			<p class="footer_info">Best player</p>
+			<p>2021 &copy; Transcendence</p>
+			<img class="footer_switchThem" src="icon/brightness_6_white_24dp.svg" alt="Switch them">
+		</footer>
+		<div class="sign" v-show="signPage">
+			<div class="sign_window">
+				<h3 class="sign_logo">TRANSCENDENCE</h3>
+				<form  class="sign_form" id="sing_form">
+					<input class="sign_input" type="text" name="login" autofocus>
+					<input class="sign_input" type="password" name="password">
+				</form>
+				<input class="sign_send" type="submit" form="test" value="SIGN IN" v-on:click="checkLogin()">
+			</div>
+		</div>
+	</div>
+	<script src="script/app.js"></script>
 </body>
 </html>

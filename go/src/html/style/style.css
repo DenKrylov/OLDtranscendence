@@ -27,11 +27,16 @@ body {
 	font-family: "Ubuntu-medium";
 }
 
+.app {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 a {
 	text-decoration: none;
 	color: var(--main-dark-foregroundNormal);
 }
-
 li {
 	list-style-type: none;
 }

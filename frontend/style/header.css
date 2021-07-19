@@ -25,33 +25,17 @@ header {
 	cursor: pointer;
 }
 
-.header_li_denid {
-	margin: 0 1rem 0 1rem;
-	color: var(--main-dark-foregroundNeutral);
-	padding: .5rem;
-	cursor: pointer;
+.header_li_active {
+	color: var(--main-dark-foregroundPositive);
 }
 
 .header_li:active {
 	color: var(--main-dark-foregroundPositive);
 }
 
-.header_li_denid:active {
-	color: var(--main-dark-foregroundNegative);
-}
-
 .header_nikename {
 	color: var(--main-dark-decorationFocus);
 }
-
-.header_login__in {
-	color: var(--main-dark-foregroundPositive);
-}
-
-/* .header_login__up {
-	border: 1px solid var(--main-dark-foregroundNormal);
-	border-radius: .3rem;
-} */
 
 .header_login__up:hover {
 	transition: .3s;
