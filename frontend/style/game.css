@@ -26,11 +26,11 @@
 }
 
 .score_one {
-	color: var(--main-dark-decorationFocus);
+	color: var(--main-decorationFocus);
 }
 
 .score_two {
-	color: var(--main-dark-foregroundPositive);
+	color: var(--main-foregroundPositive);
 }
 
 .scoer_colon {
@@ -43,12 +43,12 @@
 }
 
 .field_one {
-	border: 1px solid var(--main-dark-foregroundPositive);
+	border: 1px solid var(--main-foregroundPositive);
 	border-left: none;
 }
 
 .field_two {
-	border: 1px solid var(--main-dark-decorationFocus);
+	border: 1px solid var(--main-decorationFocus);
 	border-right: none;
 }
 
@@ -57,7 +57,7 @@
 	left: 0;
 	height: 20vh;
 	width: 2vh;
-	background-color: var(--main-dark-decorationFocus);
+	background-color: var(--main-decorationFocus);
 	border-radius: 0 .3rem .3rem 0;
 }
 
@@ -67,7 +67,7 @@
 	height: 20vh;
 	width: 2vh;
 	justify-content: end;
-	background-color: var(--main-dark-foregroundPositive);
+	background-color: var(--main-foregroundPositive);
 	border-radius: .3rem 0 0 .3rem;
 }
 
@@ -78,8 +78,8 @@
 	height: 5vh;
 	width: 5vh;
 	border-radius: 100%;
-	background: var(--main-dark-backgroundNormal);
-	border: 1px solid var(--main-dark-foregroundNeutral);
+	background: var(--main-backgroundNormal);
+	border: 1px solid var(--main-foregroundNeutral);
 }
 
 .header_avatarka {

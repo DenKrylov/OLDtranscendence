@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="style/body.css">
 	<link rel="stylesheet" href="style/chat.css">
-	<link rel="stylesheet" href="style/colors.css">
+	<link rel="stylesheet" href="style/colorsDark.css">
 	<link rel="stylesheet" href="style/footer.css">
 	<link rel="stylesheet" href="style/game.css">
 	<link rel="stylesheet" href="style/header.css">
@@ -23,10 +24,20 @@
 		<header>
 			<h1 class="header_h1" v-on:click="logout()">Transcendence</h1>
 			<ul class="header_nav">
-				<li class="header_li header_li_active" v-if="login" v-on:click="showHome()">Home</li>
-				<li class="header_li" v-if="login" v-on:click="showChat()">Chat</li>
-				<li class="header_li" v-if="login" v-on:click="showGame()">Game</li>
-				<li class="header_li header_nikename" v-if="login" v-on:click="showInfo()"> Monie </li>
+				<li class="header_li" v-if="login" v-on:click="showHome()" v-bind:class="isActiveMain()">Home</li>
+				<li class="header_li" v-if="login" v-on:click="showChat()" v-bind:class="isActiveChat()">Chat</li>
+				<li class="header_li" v-if="login" v-on:click="showGame()" v-bind:class="isActiveGame()">Game</li>
+				<li class="header_li header_nikename" v-if="login">
+					<ul>
+						<li class="score_player score_one">
+							<h4 class="score_one_nike">Monie</h4>
+							<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">
+						</li>
+						<!-- <li>My profile</li>
+						<li><a href="https://profile.intra.42.fr/users/monie"></a>My progile intra</li>
+						<li v-on:click="logout()">Logout</li> -->
+					</ul>
+				</li>
 				<li class="header_li header_li_active" v-else v-on:click="signPage = true">Sign in</li>
 			</ul>
 		</header>
@@ -41,8 +52,8 @@
 		</main>
 		<div class="chat" v-show="chatPage">
 			<ul class="chat_nav">
-				<li li class="chat_users" v-for="chat in chats">
-					<img class="chat_data_avatarka" src="../images/avatarka.png" alt="avatarka">
+				<li li class="chat_users " v-for="chat in chats" v-on:click="setActiveChat(chat)" v-bind:class="getActiveChat(chat.name)">
+					<img class="chat_data_avatarka" src="images/avatarka.png" alt="avatarka">
 					<div class="chat_data">
 						<p class="chat_data__niknema">{{ chat.name }}</p>
 						<p class="chat_data__massage">{{ chat.message }}</p>
@@ -51,33 +62,43 @@
 			</ul>
 			<div class="chat_main">
 				<ul class="chat_dialog">
-					<li class="dialog dialog_ohter" v-for="message in dialog">
-						<img class="dialog_avatarka" src="../images/avatarka.png" alt="avatarka">
-						<div class="dialog_data dialog_data_other">
-							<h4 class="dialog_name">{{ message.user }}</h6>
-							<p class="dialog_text">{{ message.text }}</p>
-						</div>
-					</li>
+					<li class="dialog" v-for="message in getDialog(chats)" v-bind:class="getClassDialog(message.user)">
+						<template v-if="message.user == user">
+							<div class="dialog_data dialog_data_my">
+								<h4 class="dialog_name">{{ message.user }}</h6>
+								<p class="dialog_text">{{ message.text }}</p>
+							</div>
+							<img class="dialog_avatarka" src="images/avatarka.png" alt="avatarka">
+						</template>
+						<template v-else>
+							<img class="dialog_avatarka" src="images/avatarka.png" alt="avatarka">
+							<div class="dialog_data dialog_data_other">
+								<h4 class="dialog_name">{{ message.user }}</h6>
+								<p class="dialog_text">{{ message.text }}</p>
+							</div>
+						</template>
+					</template>
 				</ul>
 				<div class="chat_push">
 					<form  id="chat_input">
-						<input class="chat_input" type="text" name="age" autofocus>
+						<input class="chat_input" type="text" name="age" autofocus v-model="tmpMessage">
 					</form>
-					<input class="chat_send" type="submit" form="test" value="SEND">
+					<input class="chat_send" type="submit" form="test" value="SEND" v-on:click="sendMessage()">
 				</div>
 			</div>
 		</div>
 		<div class="game" v-show="gamePage">
-			<div class="player_one"></div>
+			<div class="player_one"></div> 
+			<div class="player_one"></div> 
 			<div class="field field_one"></div>
 			<div class="field field_two"></div>
 			<div class="player_two"></div>
 			<div class="ball"></div>
 		</div>
 		<footer>
-			<p class="footer_info">Best player</p>
+			<p class="footer_info">{{ bestGamer }}</p>
 			<p>2021 &copy; Transcendence</p>
-			<img class="footer_switchThem" src="icon/brightness_6_white_24dp.svg" alt="Switch them">
+			<img class="footer_switchThem" v-bind:src="iconTheme()" alt="Switch them" v-on:click="changeTheme()">
 		</footer>
 		<div class="sign" v-show="signPage">
 			<div class="sign_window">
@@ -86,7 +107,7 @@
 					<input class="sign_input" type="text" name="login" autofocus>
 					<input class="sign_input" type="password" name="password">
 				</form>
-				<input class="sign_send" type="submit" form="test" value="SIGN IN" v-on:click="checkLogin()">
+				<input class="sign_send" type="submit" form="test" value="SIGN IN" v-on:click="checkLogin()" v-on:enter="checkLogin()">
 			</div>
 		</div>
 	</div>

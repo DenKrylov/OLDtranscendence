@@ -4,7 +4,7 @@ footer {
 	align-items: center;
 	flex-shrink: 0;
 	height: 2rem;
-	background-color: var(--main-dark-backgroundNormal);
+	background-color: var(--main-backgroundNormal);
 }
 
 .footer_info {

@@ -1,6 +1,6 @@
 header {
 	display: flex;
-	background-color: var(--main-dark-backgroundNormal);
+	background-color: var(--main-backgroundNormal);
 	height: 4rem;
 	justify-content: space-between;
 	align-items: center;
@@ -14,33 +14,34 @@ header {
 
 .header_nav {
 	display: flex;
+	align-items: center;
 	flex-shrink: 0;
-	margin: 0 1rem 0 0;
+	margin: 0 0 0 0;
 }
 
 .header_li {
 	margin: 0 1rem 0 1rem;
-	color: var(--main-dark-foregroundNormal);
+	color: var(--main-foregroundNormal);
 	padding: .5rem;
 	cursor: pointer;
 }
 
+.header_li_active {
+	color: var(--main-foregroundPositive);
+}
+
 .header_li:active {
-	color: var(--main-dark-foregroundPositive);
+	color: var(--main-foregroundPositive);
 }
 
 .header_nikename {
-	color: var(--main-dark-decorationFocus);
-}
-
-.header_login__in {
-	color: var(--main-dark-foregroundPositive);
+	color: var(--main-decorationFocus);
 }
 
 .header_login__up:hover {
 	transition: .3s;
-	color: var(--main-dark-foregroundLink);
-	border: 1px solid var(--main-dark-foregroundLink);
+	color: var(--main-foregroundLink);
+	border: 1px solid var(--main-foregroundLink);
 }
 
 .header_mid { 

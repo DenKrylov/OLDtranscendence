@@ -35,7 +35,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: var(--main-dark-foregroundNormal);
+	color: var(--main-foregroundNormal);
 }
 li {
 	list-style-type: none;

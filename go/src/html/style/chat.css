@@ -10,8 +10,8 @@
 	flex-direction: column;
 	align-items: center;
 	width: 25rem;
-	background-color: var(--main-dark-backgroundNormal);
-	border-right: 1px solid var(--main-dark-foregroundVisited);
+	background-color: var(--main-backgroundNormal);
+	border-right: 1px solid var(--main-foregroundVisited);
 }
 
 .chat_users {
@@ -22,12 +22,12 @@
 
 .chat_users:hover {
 	transition: .3s;
-	background-color: var(--main-dark-backgroundAlternate);
+	background-color: var(--main-backgroundAlternate);
 	cursor: pointer;
 }
 
 .chat_active {
-	background-color: var(--main-dark-decorationFocus);
+	background-color: var(--main-decorationFocus);
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -93,7 +93,7 @@
 }
 
 .dialog_data {
-	background: var(--main-dark-backgroundNormal);
+	background: var(--main-backgroundNormal);
 	padding: .4rem;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .dialog_name {
-	color: var(--main-dark-foregroundPositive);
+	color: var(--main-foregroundPositive);
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -116,7 +116,7 @@
 	flex-direction: row;
 	height: 5rem;
 	align-items: center;
-	border-top: 1px solid var(--main-dark-backgroundNormal);
+	border-top: 1px solid var(--main-backgroundNormal);
 	border-radius: .3rem;
 }
 
@@ -127,9 +127,9 @@
 	margin: .5rem 0 .5rem 1rem;
 	padding: 0 0 0 .5rem;
 	box-sizing: border-box;
-	background: var(--main-dark-backgroundNormal);
-	color: var(--main-dark-foregroundNormal);
-	border: 1px solid var(--main-dark-backgroundAlternate);
+	background: var(--main-backgroundNormal);
+	color: var(--main-foregroundNormal);
+	border: 1px solid var(--main-backgroundAlternate);
 	border-radius: .3rem 0 0 .3rem;
 	font-size: 1.5rem;
 }
@@ -140,17 +140,17 @@
 	width: 7rem;
 	margin: .5rem 1rem .5rem 0;
 	box-sizing: border-box;
-	background: var(--main-dark-backgroundNormal);
-	border: 1px solid var(--main-dark-backgroundAlternate);
+	background: var(--main-backgroundNormal);
+	border: 1px solid var(--main-backgroundAlternate);
 	border-radius: 0 .3rem .3rem 0;
 	cursor: pointer;
-	color: var(--main-dark-decorationFocus);
+	color: var(--main-decorationFocus);
 }
 
 .chat_send:active {
 	transition: .1s;
-	background: var(--main-dark-decorationFocus);
-	color: var(--main-dark-foregroundNormal);
+	background: var(--main-decorationFocus);
+	color: var(--main-foregroundNormal);
 }
 
 /* ----------------------------------------------------------------------------------------- */
