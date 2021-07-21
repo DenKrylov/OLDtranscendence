@@ -27,18 +27,16 @@
 				<li class="header_li" v-if="login" v-on:click="showHome()" v-bind:class="isActiveMain()">Home</li>
 				<li class="header_li" v-if="login" v-on:click="showChat()" v-bind:class="isActiveChat()">Chat</li>
 				<li class="header_li" v-if="login" v-on:click="showGame()" v-bind:class="isActiveGame()">Game</li>
-				<li class="header_li header_nikename" v-if="login">
-					<ul>
-						<li class="score_player score_one">
-							<h4 class="score_one_nike">Monie</h4>
-							<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">
-						</li>
-						<!-- <li>My profile</li>
-						<li><a href="https://profile.intra.42.fr/users/monie"></a>My progile intra</li>
-						<li v-on:click="logout()">Logout</li> -->
-					</ul>
+				<li class="header_li header_user" v-if="login" v-on:click="changeUserMenu()">
+					<h4 class="header_use" v-bind:class="changeColorUser()">Monie</h4>
+					<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">	
 				</li>
-				<li class="header_li header_li_active" v-else v-on:click="signPage = true">Sign in</li>
+				<li class="header_li header_li_active" v-else v-on:click="showSign()">Sign in</li>
+			</ul>
+			<ul class="header_userMenu" v-show="userMenu">
+				<li class="userMenu_li" v-on:click="changeUserMenu()">Profile</li>
+				<li class="userMenu_li" v-on:click="changeUserMenu()"><a v-bind:href="getProfileUser()">Profile intra</a></li>
+				<li class="userMenu_li userMenu_li_logout" v-on:click="logout(), changeUserMenu()">Logout</li>
 			</ul>
 		</header>
 		<main class="main" v-show="mainPage">
@@ -81,9 +79,9 @@
 				</ul>
 				<div class="chat_push">
 					<form  id="chat_input">
-						<input class="chat_input" type="text" name="age" autofocus v-model="tmpMessage">
+						<input class="chat_input" type="text" name="age" autofocus v-model="tmpMessage" autocomplete="off">
 					</form>
-					<input class="chat_send" type="submit" form="test" value="SEND" v-on:click="sendMessage()">
+					<input class="chat_send" type="submit" form="test" value="SEND" v-on:click="sendMessage()" v-on:enter="sendMessage()">
 				</div>
 			</div>
 		</div>

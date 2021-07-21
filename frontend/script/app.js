@@ -8,6 +8,7 @@ new Vue({
 		gamePage: false,
 		tmpDialog: '',
 		tmpMessage: '',
+		userMenu: false,
 		activeChat: 'Transcendence', //полюбому должен быть активный чат
 		user: 'Monie', // имя пользователя залогиневшего
 		bestGamer: 'Monie', //лучший игрок сохраняется в бд
@@ -107,6 +108,9 @@ new Vue({
 
 	},
 	methods: {
+		showSign: function() {
+			signPage = true;
+		},
 		checkLogin: function() {
 			this.signPage = false;
 			this.login = true;
@@ -145,10 +149,8 @@ new Vue({
 		changeTheme: function() {
 			if(this.theme) {
 				this.theme = false;
-				console.log(this.theme);
 			} else {
 				this.theme = true;
-				console.log(this.theme);
 			}
 		},
 		iconTheme: function() {
@@ -214,6 +216,26 @@ new Vue({
 
 			}
 			this.tmpMessage = '';
+		},
+		getProfileUser: function() {
+			return('https://profile.intra.42.fr/users/' + this.user.toLowerCase());
+		},
+		changeUserMenu: function() {
+			if(this.userMenu) {
+				this.userMenu = false;
+			} else {
+				this.userMenu = true;
+			}
+		},
+		changeUserMenuFalse: function() {
+			if(this.userMenu) {
+				this.userMenu = false;
+			}
+		},
+		changeColorUser: function() {
+			if(this.userMenu) {
+				return('header_use__active')
+			}
 		}
 	}
 })
