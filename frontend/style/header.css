@@ -6,18 +6,31 @@ header {
 	align-items: center;
 }
 
+/* ----------------------------------------------------------------------------------------- */
+
 .header_h1 {
 	flex-shrink: 0;
+	width: 23rem;
 	margin: 0 0 0 1rem;
 	cursor: pointer;
 }
 
+.header_mid {
+	flex: 1 0 auto;
+	display: flex;
+}
+
+.header_midCenter {
+	justify-content: center;
+}
+
 .header_nav {
+	flex-shrink: 0;
 	display: flex;
 	align-items: center;
-	flex-shrink: 0;
-	margin: 0 0 0 0;
 }
+
+/* ----------------------------------------------------------------------------------------- */
 
 .header_li {
 	margin: 0 1rem 0 1rem;
@@ -46,10 +59,17 @@ header {
 	border: 1px solid var(--main-foregroundLink);
 }
 
+/* ----------------------------------------------------------------------------------------- */
+.header_avatarka {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 100%;
+	margin: 0 1rem;
+}
+/* ----------------------------------------------------------------------------------------- */
 .header_mid { 
 	display: flex;
 	flex: 1 0 auto;
-	justify-content: center;
 }
 /* Доделать середину хедара */
 
@@ -92,4 +112,52 @@ header {
 
 .userMenu_li_logout {
 	font-size: larger;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+.game_score {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 50rem;
+	font-size: 2rem;
+}
+
+.score_game {
+	display: flex;
+}
+
+.score_player {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.score_one {
+	color: var(--main-decorationFocus);
+}
+
+.score_two {
+	color: var(--main-foregroundPositive);
+}
+
+.scoer_colon {
+	margin: 0 1rem;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.header_chat {
+	display: flex;
+}
+
+.hader_chatInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header_chatScore {
+	color: var(--main-foregroundVisited);
 }

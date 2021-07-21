@@ -8,14 +8,20 @@ new Vue({
 		gamePage: false,
 		tmpDialog: '',
 		tmpMessage: '',
+		userMenu: false,
+		scoreOne: 3,
+		scoreTwo: 7,
 		activeChat: 'Transcendence', //полюбому должен быть активный чат
+		numberOfMessages: 0,
 		user: 'Monie', // имя пользователя залогиневшего
+		enemy: 'Esnowbal',
 		bestGamer: 'Monie', //лучший игрок сохраняется в бд
 		theme: true, //цвет темы. Должна сохраняться с бд
 		chats: [
 			{
 				name: 'Transcendence',
-				message: 'Я вас опять скипну с чатаl!',
+				message: 'Last message',
+				index: 4,
 				dialog: [
 					{
 						user: 'Esnowbal',
@@ -37,7 +43,8 @@ new Vue({
 			},
 			{
 				name: 'Ngonzo',
-				message: 'Да оке!',
+				message: 'Last message',
+				index: 4,
 				dialog: [
 					{
 						user: 'Ngonzo',
@@ -59,7 +66,8 @@ new Vue({
 			},
 			{
 				name: 'Esnowbal',
-				message: 'Hi',
+				message: 'Last message',
+				index: 3,
 				dialog: [
 					{
 						user: 'Esnowbal',
@@ -77,7 +85,8 @@ new Vue({
 			},
 			{
 				name: 'Gwynthon',
-				message: 'Hi',
+				message: 'Last message',
+				index: 2,
 				dialog: [
 					{
 						user: 'Monie',
@@ -91,7 +100,8 @@ new Vue({
 			},
 			{
 				name: 'Hrewa',
-				message: 'Hi',
+				message: 'Last message',
+				index: 2,
 				dialog: [
 					{
 						user: 'Monie',
@@ -107,6 +117,9 @@ new Vue({
 
 	},
 	methods: {
+		showSign: function() {
+			signPage = true;
+		},
 		checkLogin: function() {
 			this.signPage = false;
 			this.login = true;
@@ -145,10 +158,8 @@ new Vue({
 		changeTheme: function() {
 			if(this.theme) {
 				this.theme = false;
-				console.log(this.theme);
 			} else {
 				this.theme = true;
-				console.log(this.theme);
 			}
 		},
 		iconTheme: function() {
@@ -209,8 +220,36 @@ new Vue({
 				user: this.user,
 				text: this.tmpMessage,
 			};
-			this.chats[this.tmpDialog].dialog.push(newMessage);
+			if(this.tmpMessage != '') {
+				this.chats[this.tmpDialog].dialog.push(newMessage);
+
+			}
 			this.tmpMessage = '';
+		},
+		getProfileUser: function() {
+			return('https://profile.intra.42.fr/users/' + this.user.toLowerCase());
+		},
+		changeUserMenu: function() {
+			if(this.userMenu) {
+				this.userMenu = false;
+			} else {
+				this.userMenu = true;
+			}
+		},
+		changeUserMenuFalse: function() {
+			if(this.userMenu) {
+				this.userMenu = false;
+			}
+		},
+		changeColorUser: function() {
+			if(this.userMenu) {
+				return('header_use__active');
+			}
+		},
+		headeMid() {
+			if(this.gamePage) {
+				return('header_midCenter');
+			}
 		}
 	}
 })

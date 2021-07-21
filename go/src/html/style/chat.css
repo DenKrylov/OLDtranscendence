@@ -132,6 +132,7 @@
 	border: 1px solid var(--main-backgroundAlternate);
 	border-radius: .3rem 0 0 .3rem;
 	font-size: 1.5rem;
+	outline: none;
 }
 
 .chat_send {

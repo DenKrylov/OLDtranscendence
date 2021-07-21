@@ -22,7 +22,31 @@
 <body>
 	<div class="app">
 		<header>
-			<h1 class="header_h1" v-on:click="logout()">Transcendence</h1>
+			<h1 class="header_h1" v-on:click="showHome()">Transcendence</h1>
+			<div class="header_mid" v-bind:class="headeMid()">
+				<div class="header_chat" v-show="chatPage">
+					<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">
+					<div class="hader_chatInfo">
+						<h3 class="header_chatHeader">{{ activeChat }}</h3>
+						<p class="header_chatScore">{{ numberOfMessages }}</p>
+					</div>
+				</div>
+				<div class="game_score" v-show="gamePage">
+					<div class="score_player score_one">
+						<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">
+						<h4 class="score_one_nike">{{ user }}</h4>
+					</div>
+					<div class="score_game">
+						<p class="score_one">{{ scoreOne }}</p>
+						<p class="scoer_colon">:</p>
+						<p class="score_two">{{ scoreTwo }}</p>
+					</div>
+					<div class="score_player score_two">
+						<h4 class="score_two_nike">{{ enemy }}</h4>
+						<img class="header_avatarka" src="images/avatarka.png" alt="avatarka">
+					</div>
+				</div>
+			</div>
 			<ul class="header_nav">
 				<li class="header_li" v-if="login" v-on:click="showHome()" v-bind:class="isActiveMain()">Home</li>
 				<li class="header_li" v-if="login" v-on:click="showChat()" v-bind:class="isActiveChat()">Chat</li>
@@ -75,7 +99,7 @@
 								<p class="dialog_text">{{ message.text }}</p>
 							</div>
 						</template>
-					</template>
+					</li>
 				</ul>
 				<div class="chat_push">
 					<form  id="chat_input">

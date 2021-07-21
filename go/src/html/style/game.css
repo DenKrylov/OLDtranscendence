@@ -6,38 +6,6 @@
 
 /* ----------------------------------------------------------------------------------------- */
 
-.game_score {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 50rem;
-	font-size: 2rem;
-}
-
-.score_game {
-	display: flex;
-}
-
-.score_player {
-	display: flex;
-	justify-content: start;
-	align-items: center;
-}
-
-.score_one {
-	color: var(--main-decorationFocus);
-}
-
-.score_two {
-	color: var(--main-foregroundPositive);
-}
-
-.scoer_colon {
-	margin: 0 1rem;
-}
-/* ----------------------------------------------------------------------------------------- */
-
 .field {
 	flex: 1 0 auto;
 }
@@ -80,11 +48,4 @@
 	border-radius: 100%;
 	background: var(--main-backgroundNormal);
 	border: 1px solid var(--main-foregroundNeutral);
-}
-
-.header_avatarka {
-	height: 3rem;
-	width: 3rem;
-	border-radius: 100%;
-	margin: 0 1rem;
 }

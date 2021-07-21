@@ -9,14 +9,19 @@ new Vue({
 		tmpDialog: '',
 		tmpMessage: '',
 		userMenu: false,
+		scoreOne: 3,
+		scoreTwo: 7,
 		activeChat: 'Transcendence', //полюбому должен быть активный чат
+		numberOfMessages: 0,
 		user: 'Monie', // имя пользователя залогиневшего
+		enemy: 'Esnowbal',
 		bestGamer: 'Monie', //лучший игрок сохраняется в бд
 		theme: true, //цвет темы. Должна сохраняться с бд
 		chats: [
 			{
 				name: 'Transcendence',
-				message: 'Я вас опять скипну с чатаl!',
+				message: 'Last message',
+				index: 4,
 				dialog: [
 					{
 						user: 'Esnowbal',
@@ -38,7 +43,8 @@ new Vue({
 			},
 			{
 				name: 'Ngonzo',
-				message: 'Да оке!',
+				message: 'Last message',
+				index: 4,
 				dialog: [
 					{
 						user: 'Ngonzo',
@@ -60,7 +66,8 @@ new Vue({
 			},
 			{
 				name: 'Esnowbal',
-				message: 'Hi',
+				message: 'Last message',
+				index: 3,
 				dialog: [
 					{
 						user: 'Esnowbal',
@@ -78,7 +85,8 @@ new Vue({
 			},
 			{
 				name: 'Gwynthon',
-				message: 'Hi',
+				message: 'Last message',
+				index: 2,
 				dialog: [
 					{
 						user: 'Monie',
@@ -92,7 +100,8 @@ new Vue({
 			},
 			{
 				name: 'Hrewa',
-				message: 'Hi',
+				message: 'Last message',
+				index: 2,
 				dialog: [
 					{
 						user: 'Monie',
@@ -180,6 +189,7 @@ new Vue({
 		},
 		setActiveChat: function(chat) {
 			this.activeChat = chat.name;
+			this.numberOfMessages = chat.index;
 		},
 		getActiveChat: function(chat) {
 			if(this.activeChat == chat) {
@@ -234,7 +244,12 @@ new Vue({
 		},
 		changeColorUser: function() {
 			if(this.userMenu) {
-				return('header_use__active')
+				return('header_use__active');
+			}
+		},
+		headeMid() {
+			if(this.gamePage) {
+				return('header_midCenter');
 			}
 		}
 	}
