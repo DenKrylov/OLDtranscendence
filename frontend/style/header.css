@@ -1,11 +1,17 @@
-header {
+.header {
 	display: flex;
-	background: var(--main-backgroundNormal);
 	height: 4rem;
 	justify-content: space-between;
 	align-items: center;
 }
 
+.header_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.header_light {
+	background: var(--main-light-backgroundNormal);
+}
 /* ----------------------------------------------------------------------------------------- */
 
 .header_h1 {
@@ -85,12 +91,20 @@ header {
 .header_use__active {
 	color: var(--main-foregroundPositive);
 }
+
 .header_userMenu {
 	position: absolute;
 	top: 4rem;
 	right: 0;
 	width: 13rem;
-	background: var(--main-backgroundNormal);
+}
+
+.header_userMenu_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.header_userMenu_light {
+	background: var(--main-light-backgroundNormal);
 }
 
 .userMenu_li {

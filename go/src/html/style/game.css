@@ -46,6 +46,13 @@
 	height: 5vh;
 	width: 5vh;
 	border-radius: 100%;
-	background: var(--main-backgroundNormal);
 	border: 1px solid var(--main-foregroundNeutral);
+}
+
+.ball_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.ball_light {
+	background: var(--main-light-backgroundNormal);
 }

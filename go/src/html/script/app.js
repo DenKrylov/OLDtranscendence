@@ -1,10 +1,10 @@
 new Vue({
 	el: '.app',
 	data: {
-		login: true, 
-		mainPage: false,
+		login: false, 
+		mainPage: true,
 		signPage: false,
-		chatPage: true,
+		chatPage: false,
 		gamePage: false,
 		tmpDialog: '',
 		tmpMessage: '',
@@ -189,6 +189,7 @@ new Vue({
 		},
 		setActiveChat: function(chat) {
 			this.activeChat = chat.name;
+			this.numberOfMessages = chat.index;
 		},
 		getActiveChat: function(chat) {
 			if(this.activeChat == chat) {
@@ -246,10 +247,18 @@ new Vue({
 				return('header_use__active');
 			}
 		},
-		headeMid() {
+		headeMid: function() {
 			if(this.gamePage) {
 				return('header_midCenter');
 			}
-		}
+		},
+		vTeme: function(str) {
+			if(this.theme) {
+				console.log(str + '_dark');
+				return(str + '_dark');
+			} else {
+				return(str + '_light')
+			}
+		} 
 	}
 })

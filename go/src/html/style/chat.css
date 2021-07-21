@@ -10,8 +10,15 @@
 	flex-direction: column;
 	align-items: center;
 	width: 25rem;
-	background-color: var(--main-backgroundNormal);
 	border-right: 1px solid var(--main-foregroundVisited);
+}
+
+.chat_nav_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.chat_nav_light {
+	background: var(--main-light-backgroundNormal);
 }
 
 .chat_users {
@@ -22,7 +29,7 @@
 
 .chat_users:hover {
 	transition: .3s;
-	background-color: var(--main-backgroundAlternate);
+	background: var(--main-foregroundVisited);
 	cursor: pointer;
 }
 
@@ -93,8 +100,15 @@
 }
 
 .dialog_data {
-	background: var(--main-backgroundNormal);
 	padding: .4rem;
+}
+
+.dialog_data_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.dialog_data_light {
+	background: var(--main-light-backgroundNormal);
 }
 
 .dialog_data_my {
@@ -127,12 +141,21 @@
 	margin: .5rem 0 .5rem 1rem;
 	padding: 0 0 0 .5rem;
 	box-sizing: border-box;
-	background: var(--main-backgroundNormal);
-	color: var(--main-foregroundNormal);
-	border: 1px solid var(--main-backgroundAlternate);
 	border-radius: .3rem 0 0 .3rem;
 	font-size: 1.5rem;
 	outline: none;
+}
+
+.chat_input_dark {
+	background: var(--main-dark-backgroundNormal);
+	color: var(--main-dark-foregroundNormal);
+	border: 1px solid var(--main-dark-backgroundAlternate);
+}
+
+.chat_input_light {
+	background: var(--main-light-backgroundNormal);
+	color: var(--main-light-foregroundNormal);
+	border: 1px solid var(--main-light-backgroundAlternate);
 }
 
 .chat_send {
@@ -141,11 +164,19 @@
 	width: 7rem;
 	margin: .5rem 1rem .5rem 0;
 	box-sizing: border-box;
-	background: var(--main-backgroundNormal);
-	border: 1px solid var(--main-backgroundAlternate);
 	border-radius: 0 .3rem .3rem 0;
 	cursor: pointer;
 	color: var(--main-decorationFocus);
+}
+
+.chat_send_dark {
+	background: var(--main-backgroundNormal);
+	border: 1px solid var(--main-backgroundAlternate);
+}
+
+.chat_send_light {
+	background: var(--main-backgroundNormal);
+	border: 1px solid var(--main-backgroundAlternate);
 }
 
 .chat_send:active {

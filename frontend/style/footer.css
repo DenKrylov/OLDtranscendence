@@ -1,10 +1,17 @@
-footer {
+.footer {
+	flex-shrink: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-shrink: 0;
 	height: 2rem;
-	background-color: var(--main-backgroundNormal);
+}
+
+.footer_dark {
+	background: var(--main-dark-backgroundNormal);
+}
+
+.footer_light {
+	background: var(--main-light-backgroundNormal);
 }
 
 .footer_info {
